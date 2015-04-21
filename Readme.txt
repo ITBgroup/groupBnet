@@ -1,1 +1,0 @@
-there is no thing to talk
