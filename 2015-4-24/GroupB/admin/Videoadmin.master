@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="admin.master.cs" Inherits="admin_admin" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Videoadmin.master.cs" Inherits="admin_admin" %>
 
 <!DOCTYPE html>
 
@@ -26,7 +26,7 @@ ul { list-style:none;}
 .active a {color:#fff;}
 .blankgray {background:#bbb; height:2px; width:100%; margin:0; padding:0; clear:both; font-size:2px;}
 </style>
-<script type="text/javascript"  src="js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" language="javascript" src="js/jquery-1.3.2.min.js"></script>
 <script type="text/javascript">
     var oplist = new Array('about', 'user', 'news', 'mars', 'jielong', 'box', 'school', 'config', 'other');
     $(document).ready(function () {
@@ -68,8 +68,8 @@ ul { list-style:none;}
 	<div id="banner"><h1>后台管理登录</h1></div>
     <div id="nav">
     	<ul>
-            <li class="inactive" id="video"><a href="Index2.aspx" target="menu">视频站设置</a></li>
-            <li class="active" id="main2"><a href="Index.aspx" target="menu">主站设置</a></li>
+            <li class="active" id="video"><a href="Index2.aspx" target="menu">视频站设置</a></li>
+            <li class="inactive" id="main2"><a href="Index.aspx" target="menu">主站设置</a></li>
         </ul>
     </div>
     <div id="main">
@@ -86,10 +86,8 @@ ul { list-style:none;}
 </div>
    <div id="menu">
         <ul>
-            <li><img src="images/li.jpg" />&nbsp;&nbsp;&nbsp; <a href="ArticleClass.aspx" target="main">文章分类</a><hr /></li>
-            <li><img src="images/li.jpg" />&nbsp;&nbsp;&nbsp; <a href="Article.aspx" target="main">文章管理</a><hr /></li>
-            <li><img src="images/li.jpg" />&nbsp;&nbsp;&nbsp; <a href="VideoClass1.aspx" target="main">视频分类</a><hr /></li>
-            <li><img src="images/li.jpg" />&nbsp;&nbsp;&nbsp; <a href="Video1.aspx" target="main">视频管理</a><hr /></li>
+            <li><img src="images/li.jpg" />&nbsp;&nbsp;&nbsp; <a href="VideoClass2.aspx" target="main">视频分类</a><hr /></li>
+            <li><img src="images/li.jpg" />&nbsp;&nbsp;&nbsp; <a href="Video2.aspx" target="main">视频管理</a><hr /></li>
         </ul>
     </div>
     <div id="change" class="source">

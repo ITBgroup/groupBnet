@@ -23,7 +23,7 @@
 	    </div>
 	    <![endif]-->
 		<h1>黑客与极客网站管理登陆</h1>
-		<form method="post" action="login.aspx" onsubmit="javascript:return WebForm_OnSubmit();" id="form1">
+		<form method="post" runat="server" action="login.aspx" onsubmit="javascript:return WebForm_OnSubmit();" id="form1">
 <div class="aspNetHidden">
 <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
 <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
@@ -78,8 +78,10 @@
 				<!--input type="password" placeholder="请输入密码" /-->
 			</p>
 			<p class="login-btn">
-				<input type="submit" name="BtnLogin" value="登录" id="BtnLogin" />
-				<input type="submit" name="BtnReturn" value="返回首页" id="BtnReturn" />
+				<%--<input type="submit" name="BtnLogin" value="登录" id="BtnLogin" />--%>
+				<%--<input type="submit" name="BtnReturn" value="返回首页" id="BtnReturn" />--%>
+                <asp:Button runat="server" Text="登录" ID="BtnLogin" OnClick="BtnLogin_Click" />
+                <asp:Button runat="server" Text="返回首页" ID="BtnReturn" UseSubmitBehavior="False" />
 			</p>
 		</form>
 	</div>
