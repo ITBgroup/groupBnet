@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HackerModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="HackerEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="admin" EntityType="HackerModel.admin" />
+    <EntitySet Name="article" EntityType="HackerModel.article" />
+    <EntitySet Name="articleclass" EntityType="HackerModel.articleclass" />
+    <EntitySet Name="sysdiagrams" EntityType="HackerModel.sysdiagrams" />
+    <EntitySet Name="video" EntityType="HackerModel.video" />
+    <EntitySet Name="videoclass" EntityType="HackerModel.videoclass" />
+    <AssociationSet Name="FK_video_videoclass" Association="HackerModel.FK_video_videoclass">
+      <End Role="videoclass" EntitySet="videoclass" />
+      <End Role="video" EntitySet="video" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="account" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="article">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Article1" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Addtime" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Viewnum" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Author" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Class" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="articleclass">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="class" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="video">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="url" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="author" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="addtime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="class" Type="Int32" Nullable="false" />
+    <Property Name="viewnum" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="videoclass" Relationship="HackerModel.FK_video_videoclass" FromRole="video" ToRole="videoclass" />
+  </EntityType>
+  <EntityType Name="videoclass">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="class" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="video" Relationship="HackerModel.FK_video_videoclass" FromRole="videoclass" ToRole="video" />
+  </EntityType>
+  <Association Name="FK_video_videoclass">
+    <End Role="videoclass" Type="HackerModel.videoclass" Multiplicity="1" />
+    <End Role="video" Type="HackerModel.video" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="videoclass">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="video">
+        <PropertyRef Name="class" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

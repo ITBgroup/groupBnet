@@ -1,0 +1,5 @@
+F:\visual studio 2012\Admin\Admin\bin\Admin.dll
+F:\visual studio 2012\Admin\Admin\bin\Admin.pdb
+F:\visual studio 2012\Admin\Admin\obj\Debug\Admin.csprojResolveAssemblyReference.cache
+F:\visual studio 2012\Admin\Admin\obj\Debug\Admin.dll
+F:\visual studio 2012\Admin\Admin\obj\Debug\Admin.pdb

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="hackerModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="hackerModelStoreContainer">
+    <EntitySet Name="admin" EntityType="hackerModel.Store.admin" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="article" EntityType="hackerModel.Store.article" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="articleclass" EntityType="hackerModel.Store.articleclass" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="hackerModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="video1" EntityType="hackerModel.Store.video1" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="videoclass1" EntityType="hackerModel.Store.videoclass1" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_article_class1" Association="hackerModel.Store.FK_article_class1">
+      <End Role="articleclass" EntitySet="articleclass" />
+      <End Role="article" EntitySet="article" />
+    </AssociationSet>
+    <AssociationSet Name="FK_video_videoclass" Association="hackerModel.Store.FK_video_videoclass">
+      <End Role="videoclass1" EntitySet="videoclass1" />
+      <End Role="video1" EntitySet="video1" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="account" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="password" Type="nchar" Nullable="false" MaxLength="70" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="article">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="text" Type="text" Nullable="false" />
+    <Property Name="viewnum" Type="int" Nullable="false" />
+    <Property Name="addtime" Type="time" Nullable="false" />
+    <Property Name="author" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="class" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="articleclass">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="class" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="video1">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="url" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="author" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="addtime" Type="time" Nullable="false" />
+    <Property Name="class" Type="int" Nullable="false" />
+    <Property Name="viewnum" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="videoclass1">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="class" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_article_class1">
+    <End Role="articleclass" Type="hackerModel.Store.articleclass" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="article" Type="hackerModel.Store.article" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="articleclass">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="article">
+        <PropertyRef Name="class" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_video_videoclass">
+    <End Role="videoclass1" Type="hackerModel.Store.videoclass1" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="video1" Type="hackerModel.Store.video1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="videoclass1">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="video1">
+        <PropertyRef Name="class" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
