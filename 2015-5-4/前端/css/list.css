@@ -1,0 +1,253 @@
+.main{
+	background: #edeff0;
+}
+.left_side{
+	float: left;
+	width:264px ;
+	height:480px ;
+	background: #fff;
+	margin: 30px 1% 0 10%;
+	box-shadow:0px 2px 4px rgba(0,0,0,0.1);
+	position: absolute;
+}
+.right_side{
+	float: right;
+	margin: 30px 10% 0 0;
+	width: 800px;
+	background: #fff;
+}
+.right_side>h1{
+	font: 20px "Microsoft YaHei","SimHei",sans-serif;
+	float: left;
+	margin:32px 0 20px 32px;
+}
+.right_side>img{
+	float: left;
+	margin: 39px 0 20px 5px;
+}
+.line{
+	margin: 0 auto;
+	width: 92%;
+	height: 2px;
+	background: #4f4f4f;
+	clear: both;
+}
+.list{
+	margin:0 auto ;
+	width: 92%;
+}
+.list>div{
+	height: 190px;
+	margin: 30px 0 50px 0 ;
+}
+.list>div>img{
+	width: 35%;
+	overflow: hidden; 
+	float: left;
+}
+.list>div>ul>h2{
+	float: left;
+	font: 20px "Microsoft YaHei","SimHei",sans-serif;
+}
+.list>div>ul{
+	width: 62%;
+	float: left;
+	margin-left: 20px;
+}
+.list>div>ul>p{
+	float: right;
+	margin:10px 0 0 10px;
+}
+.list>div>ul>p>a{
+	color: #474747;
+}
+.list>div>ul>p>a:hover{
+	color: #b60a0a;
+}
+.list>div>ul>div{
+	clear: both;
+	margin:48px 0 0 0;
+}
+.list>div>ul>div>img{
+	float: left;
+}
+.list>div>ul>div>h5{
+	float: left;
+	font: 14px "Microsoft YaHei","SimHei",sans-serif;
+	color: #b60a0a;
+	margin:0px 0 0 10px ; 
+}
+.list>div>ul>div>p{
+	float: left;
+	margin:4px 0 0 10px; 
+}
+.list>div>ul>div>h5+img{
+	margin:2px 0 0 20px ; 
+}
+.list>div>ul>li{
+	clear: both;
+	margin: 140px 0 0 0 ;
+	font: 14px "Microsoft YaHei","SimHei",sans-serif;
+}
+.list>div>ul>li+p{
+	float: right;
+	margin:30px 0 0 10px;
+}
+.list>div>ul>p>span{
+	color: #b60a0a;
+}
+.main .right_side .bot{
+	width: 50%;
+	margin: 0 0 60px 300px;
+}
+.main .right_side .bot a{
+	display: block;
+	width: 41px;
+	height: 41px;
+	background: #363636;
+	font: 16px "Microsoft YaHei","SimHei",sans-serif;
+	color: #fff;
+	text-align: center;
+	line-height: 41px;
+}
+.main .right_side .bot a:hover{
+	color: #b60a0a
+}
+.main .right_side .bot li{
+	float: left;
+	margin-right: 10px;
+}
+
+/* content */
+.right_side>h2{
+	font: 24px "Microsoft YaHei","SimHei",sans-serif;
+	text-align: center;
+	margin: 20px 0 0 0;
+}
+.right_side .other{
+	margin: 20px 0 0 240px;
+}
+.right_side>div>img{
+	float: left;
+	margin-left:20px; 
+}
+.right_side>div>h5{
+	font: 14px "Microsoft YaHei","SimHei",sans-serif;
+	color:#b60a0a; 
+	float: left;
+	margin-left: 10px;
+}
+.right_side>div>p{
+	font: 14px "Microsoft YaHei","SimHei",sans-serif;
+	float: left;
+	margin:0 30px 0 0;
+}
+.right_side>div>p>span{
+	font: 14px "Microsoft YaHei","SimHei",sans-serif;
+	color:#b60a0a; 
+}
+.right_side>div+img{
+	margin: 30px 0 30px 7%;
+}
+.right_side>p{
+	width: 600px;
+	margin: 30px 0 0 100px;
+	clear: both;
+	font:  14px "Microsoft YaHei","SimHei",sans-serif;
+}
+.right_side>p>span{
+	color: #b60a0a;
+}
+.right_side>h3{
+	font:  16px  "Microsoft YaHei","SimHei",sans-serif ;
+	margin: 30px 0 0 56px;
+	font-weight: bold;
+}
+.right_side>h3+img{
+	margin: 20px 0 20px 10%;
+}
+.right_side>p+img{
+	margin: 20px 0 20px 7%;
+}
+.right_side>p+h3{
+	color: #b60a0a;
+}
+.right_side>h4{
+	font:   16px  "Microsoft YaHei","SimHei",sans-serif ;
+	margin: 30px 0 0 60px;
+}
+.right_side>h5{
+	font:   12px  "Microsoft YaHei","SimHei",sans-serif ;
+	float: left;
+	margin: 20px 0 20px 56px;
+}
+.right_side>h5>a{
+	color: #363636;
+}
+.right_side>h5>a:hover{
+	color: #b60a0a;
+}
+.right_side>img+p>a{
+	color: #b60a0a;
+}
+.right_side>img+p>a:hover{
+	color: #363636;
+}
+
+/* G-list */
+.right_side>ul{
+	width: 28.2%;
+	margin:30px 0 20px 30px;
+	float: left;
+}
+.right_side>ul>img:first-child{
+	width: 100%;
+}
+.right_side>ul>h1{
+	font: 16px "Microsoft YaHei","SimHei",sans-serif;
+	text-align: center;
+}
+.right_side>ul>div>img{
+	float: left;
+	margin:10px 0px 10px 50px; 
+}
+.right_side>ul>div>p{
+	float: left;
+	margin:10px 0px 10px 5px; 
+}
+.right_side>ul>p{
+	clear:both;
+	text-align: center;
+}
+.right_side>ul>p>span{
+	color: #b60a0a;
+}
+
+
+/* G-content */
+
+.right_side>h2+img{
+	margin: 30px 0 20px 8%;
+}
+.c_other{
+	width: 90%;
+	clear: both;
+	margin: 0 0 30px 180px;
+}
+.c_other>h5{
+	float: left;
+}
+.c_other>img{
+	float: right;
+}
+.c_other>p,.other2>p{
+	float: right;
+}
+.right_side>div+p{
+	font-weight: bold;
+	font: 16px "Microsoft YaHei","SimHei",sans-serif;
+	margin: 0 0 30px 200px;
+}
+.right_side>p+p{
+	
+}
