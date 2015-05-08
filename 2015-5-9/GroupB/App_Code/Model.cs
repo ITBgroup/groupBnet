@@ -20,20 +20,29 @@ public partial class admin
 
 public partial class article
 {
-    public int ID { get; set; }
-    public string Title { get; set; }
-    public string Article1 { get; set; }
-    public string Addtime { get; set; }
-    public string Viewnum { get; set; }
-    public string Author { get; set; }
-    public string Class { get; set; }
+    public int id { get; set; }
+    public string title { get; set; }
+    public string text { get; set; }
+    public int viewnum { get; set; }
+    public System.DateTime addtime { get; set; }
+    public string author { get; set; }
+    public int @class { get; set; }
+
+    public virtual articleclass articleclass { get; set; }
 }
 
 public partial class articleclass
 {
+    public articleclass()
+    {
+        this.article = new HashSet<article>();
+    }
+
     public int id { get; set; }
     public string name { get; set; }
     public int @class { get; set; }
+
+    public virtual ICollection<article> article { get; set; }
 }
 
 public partial class sysdiagrams
@@ -45,29 +54,29 @@ public partial class sysdiagrams
     public byte[] definition { get; set; }
 }
 
-public partial class video
+public partial class video1
 {
     public int id { get; set; }
     public string title { get; set; }
     public string url { get; set; }
     public string author { get; set; }
-    public System.TimeSpan addtime { get; set; }
+    public System.DateTime addtime { get; set; }
     public int @class { get; set; }
     public int viewnum { get; set; }
 
-    public virtual videoclass videoclass { get; set; }
+    public virtual videoclass1 videoclass1 { get; set; }
 }
 
-public partial class videoclass
+public partial class videoclass1
 {
-    public videoclass()
+    public videoclass1()
     {
-        this.video = new HashSet<video>();
+        this.video1 = new HashSet<video1>();
     }
 
     public int id { get; set; }
     public string name { get; set; }
     public int @class { get; set; }
 
-    public virtual ICollection<video> video { get; set; }
+    public virtual ICollection<video1> video1 { get; set; }
 }

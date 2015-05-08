@@ -27,6 +27,6 @@ public partial class hackerEntities : DbContext
     public DbSet<article> article { get; set; }
     public DbSet<articleclass> articleclass { get; set; }
     public DbSet<sysdiagrams> sysdiagrams { get; set; }
-    public DbSet<video> video { get; set; }
-    public DbSet<videoclass> videoclass { get; set; }
+    public DbSet<video1> video1 { get; set; }
+    public DbSet<videoclass1> videoclass1 { get; set; }
 }
