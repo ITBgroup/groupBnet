@@ -1,0 +1,22 @@
+F:\visual studio 2012\Program\Backstage\Backstage\obj\Debug\Backstage.csprojResolveAssemblyReference.cache
+F:\visual studio 2012\Program\Backstage\Backstage\bin\Backstage.dll
+F:\visual studio 2012\Program\Backstage\Backstage\bin\Backstage.pdb
+F:\visual studio 2012\Program\Backstage\Backstage\bin\EntityFramework.dll
+F:\visual studio 2012\Program\Backstage\Backstage\bin\Newtonsoft.Json.dll
+F:\visual studio 2012\Program\Backstage\Backstage\bin\EntityFramework.xml
+F:\visual studio 2012\Program\Backstage\Backstage\bin\Newtonsoft.Json.pdb
+F:\visual studio 2012\Program\Backstage\Backstage\bin\Newtonsoft.Json.xml
+F:\visual studio 2012\Program\Backstage\Backstage\bin\zh-Hans\EntityFramework.resources.dll
+F:\visual studio 2012\Program\Backstage\Backstage\obj\Debug\Backstage.dll
+F:\visual studio 2012\Program\Backstage\Backstage\obj\Debug\Backstage.pdb
+D:\Users\LIN\Documents\GitHub\groupBnet\2015-5-9\Backstage\Backstage\bin\Backstage.dll
+D:\Users\LIN\Documents\GitHub\groupBnet\2015-5-9\Backstage\Backstage\bin\Backstage.pdb
+D:\Users\LIN\Documents\GitHub\groupBnet\2015-5-9\Backstage\Backstage\bin\EntityFramework.dll
+D:\Users\LIN\Documents\GitHub\groupBnet\2015-5-9\Backstage\Backstage\bin\Newtonsoft.Json.dll
+D:\Users\LIN\Documents\GitHub\groupBnet\2015-5-9\Backstage\Backstage\bin\EntityFramework.xml
+D:\Users\LIN\Documents\GitHub\groupBnet\2015-5-9\Backstage\Backstage\bin\Newtonsoft.Json.pdb
+D:\Users\LIN\Documents\GitHub\groupBnet\2015-5-9\Backstage\Backstage\bin\Newtonsoft.Json.xml
+D:\Users\LIN\Documents\GitHub\groupBnet\2015-5-9\Backstage\Backstage\bin\zh-Hans\EntityFramework.resources.dll
+D:\Users\LIN\Documents\GitHub\groupBnet\2015-5-9\Backstage\Backstage\obj\Debug\Backstage.csprojResolveAssemblyReference.cache
+D:\Users\LIN\Documents\GitHub\groupBnet\2015-5-9\Backstage\Backstage\obj\Debug\Backstage.dll
+D:\Users\LIN\Documents\GitHub\groupBnet\2015-5-9\Backstage\Backstage\obj\Debug\Backstage.pdb
