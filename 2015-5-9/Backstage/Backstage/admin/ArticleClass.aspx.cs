@@ -11,6 +11,7 @@ namespace Backstage.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string login = Session["Log"].ToString();
             if (!Page.IsPostBack)
             {
                 //绑定数据; 

@@ -11,6 +11,7 @@ namespace Backstage.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string login = Session["Log"].ToString();
             if (!Page.IsPostBack)
             {
                 using (var db = new hackerEntities())
@@ -34,7 +35,7 @@ namespace Backstage.admin
                     art.Title = myTitle.Text;
                     art.Author = Author.Text;
                     art.Addtime = DateTime.Now.ToString();
-                    art.Class = "23";
+                    art.Class = ClassList.Text;
                     art.Article1 = ue.Value;
                     art.ViewNum = 0;
                     db.Article.Add(art);

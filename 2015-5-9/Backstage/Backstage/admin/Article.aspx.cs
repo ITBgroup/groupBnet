@@ -9,11 +9,13 @@ namespace Backstage.admin
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
+        
         static int n = 0;
         static string name = "", author = "";
         static string aclas= "";
         protected void Page_Load(object sender, EventArgs e)
         {
+            string login = Session["Log"].ToString();
             PageList.Items.Clear();
             if (!Page.IsPostBack)
             {
@@ -91,8 +93,33 @@ namespace Backstage.admin
             }
         }
         protected void Article_ItemCommand(object source, RepeaterCommandEventArgs e)
-        {
-
+        { 
+            if (e.CommandName == "delete")
+            {
+                if (true)
+                {
+                    int id = Convert.ToInt32(e.CommandArgument);
+                    using (var db = new hackerEntities())
+                    {
+                        Article art = db.Article.FirstOrDefault(p => p.ID == id);
+                        db.Article.Remove(art);
+                        db.SaveChanges();
+                        ClientScript.RegisterStartupScript(this.GetType(), "", "<script>alert('删除成功');</script>");
+                        PagedDataSource pds = new PagedDataSource();
+                        var query = from it in db.Article
+                                    select it;
+                        if (name != "") query = query.Where(a => a.Title.Contains(name));
+                        if (author != "") query = query.Where(a => a.Author.Contains(author));
+                        if (aclas != "") query = query.Where(a => a.Class == aclas);
+                        query = query.OrderByDescending(a => a.Addtime);
+                        pds.DataSource = query.ToList();
+                        pds.AllowPaging = true;
+                        pds.PageSize = 6;
+                        Article.DataSource = pds;
+                        Article.DataBind();
+                    }
+                }
+            }
         }
 
         protected void AClass_SelectedIndexChanged(object sender, EventArgs e)

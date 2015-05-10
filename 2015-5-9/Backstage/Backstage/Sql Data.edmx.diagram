@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="99c14399dd274bee920e80ca6c72cf38" Name="关系图1">
+      <Diagram DiagramId="b25dbc2ec837405f9460723edeb80d0a" Name="关系图1">
         <EntityTypeShape EntityType="hackerModel.Admin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="hackerModel.Article" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="hackerModel.ArticleClass" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />

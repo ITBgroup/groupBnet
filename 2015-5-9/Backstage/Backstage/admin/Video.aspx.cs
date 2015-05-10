@@ -9,6 +9,6 @@ public partial class admin_Video : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        string login = Session["Log"].ToString();
     }
 }

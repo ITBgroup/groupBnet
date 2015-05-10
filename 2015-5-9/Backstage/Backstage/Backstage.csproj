@@ -68,7 +68,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\Account.aspx" />
     <Content Include="admin\AddArticle.aspx" />
+    <Content Include="admin\AddVideo.aspx" />
     <Content Include="admin\css\manage.css" />
     <Content Include="admin\css\reset.css" />
     <Content Include="admin\css\style.css" />
@@ -150,7 +152,7 @@
     <Content Include="admin\js\jquery-1.3.2.min.js" />
     <Content Include="admin\js\jquery.js" />
     <Content Include="admin\js\modal.js" />
-    <Content Include="admin\login.aspx" />
+    <Content Include="admin\Login.aspx" />
     <Content Include="admin\Video.aspx" />
     <Content Include="admin\Article.aspx" />
     <Content Include="admin\ArticleClass.aspx" />
@@ -479,6 +481,13 @@
     <Compile Include="Admin.cs">
       <DependentUpon>Sql Data.tt</DependentUpon>
     </Compile>
+    <Compile Include="admin\Account.aspx.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Account.aspx.designer.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\AddArticle.aspx.cs">
       <DependentUpon>AddArticle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -486,17 +495,28 @@
     <Compile Include="admin\AddArticle.aspx.designer.cs">
       <DependentUpon>AddArticle.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\AddVideo.aspx.cs">
+      <DependentUpon>AddVideo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\AddVideo.aspx.designer.cs">
+      <DependentUpon>AddVideo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\admin.master.cs">
       <DependentUpon>admin.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="admin\Hash.cs" />
     <Compile Include="admin\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\login.aspx.cs">
-      <DependentUpon>login.aspx</DependentUpon>
+    <Compile Include="admin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\Video.aspx.cs">
       <DependentUpon>Video.aspx</DependentUpon>
@@ -589,11 +609,11 @@
     <Content Include="admin\__MACOSX\images\._.DS_Store" />
     <Content Include="admin\__MACOSX\PSD\._icons.psd" />
     <Content Include="admin\__MACOSX\PSD\._psd.psd" />
+    <Content Include="packages.config" />
     <EntityDeploy Include="Sql Data.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Sql Data.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="packages.config" />
     <Content Include="Sql Data.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Sql Data.edmx</DependentUpon>

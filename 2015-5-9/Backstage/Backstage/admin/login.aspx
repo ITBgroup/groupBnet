@@ -1,9 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="login.aspx.cs" Inherits="admin_login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Backstage.admin.Login1" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
@@ -11,7 +11,7 @@
 	<link href="css/manage.css" rel="stylesheet" />
 </head>
 <body>
-	<div class="login">
+    <div class="login">
 		<!--[if lt IE 8]>
 	    <div class="ie-login">
 	    	请使用以下任意一项浏览器登录！
@@ -24,11 +24,11 @@
 	    <![endif]-->
 		<h1>黑客与极客网站管理登陆</h1>
 		<form method="post" runat="server" action="login.aspx" onsubmit="javascript:return WebForm_OnSubmit();" id="form1">
-<div class="aspNetHidden">
+<%--<div class="aspNetHidden">
 <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
 <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
 <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/UgwLN+5CmucHxsGsJAeLAKR3JUCB7qdjsIMf80F/Ysi82w/E6mvg9fzXHJbfu8FaRRC/m32eeXB6czVRCdp2Vis6Inql/dmqPLfa8CjZLw=" />
-</div>
+</div>--%>
 
 <script type="text/javascript">
     //<![CDATA[
@@ -55,7 +55,7 @@
 <script type="text/javascript">
     //<![CDATA[
     function WebForm_OnSubmit() {
-        if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+        if (typeof (ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
         return true;
     }
     //]]>
@@ -67,7 +67,7 @@
         var valrAccount = document.getElementById("valrName");
         var valrParssword = document.getElementById("valrPassword");
         if (Account.value == "" || Password.value == "") {
-            if(Account.value == "")
+            if (Account.value == "")
                 valrAccount.style.visibility = "visible";
             else {
                 valrAccount.style.visibility = "hidden";
@@ -84,68 +84,62 @@
             valrParssword.style.visibility = "hidden";
             return true;
         }
-       
-             
     }
 </script>
 
-<div class="aspNetHidden">
+<%--<div class="aspNetHidden">
 
 	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="200C32EE" />
 	<input type="hidden" name="__PREVIOUSPAGE" id="__PREVIOUSPAGE" value="aQixp8KV1vwJjFWDT0CDCto3E4PbMRw_rKZ-80YMtNAQaWWzKE2xuJOkuDvWzM-1oYw0csFog0z1qiZK5_GBDzeIWshmfWT451CgNDb-vE81" />
 	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="8aYY8LQ1/ID4Y+Qbo4u13/ZGY1ri/ZeMydmE/iOlwxftbKTIbPJiOsT09XgsQ91RFvH+9wnBX6DYSeC/YRWyeld+HcSLAX2FLtywY4v2VglRPBi+ydosvziJCYt2jlSIUU0piw+UEJU9zcGiL19kQ0z2NhvTq4pDXJehYdPq+7ZTPXtgKJVUrOKGGZmo15np" />
-</div>
+</div>--%>
 			<p>
-				<input name="txtID" type="text" maxlength="16" id="txtID" placeholder="请输入用户名" />
+				<input name="txtID" runat="server" type="text" maxlength="16" id="txtID" placeholder="请输入用户名" />
 				<span data-val-controltovalidate="txtID" data-val-errormessage="学号/工号不能为空" data-val-validationgroup="valid" id="valrName" data-val="true" data-val-evaluationfunction="RequiredFieldValidatorEvaluateIsValid" data-val-initialvalue="" style="color:Red;visibility:hidden;">学号/工号不能为空</span>
 				<!--input type="text" value="" placeholder="请输入用户名" /-->
 			</p>
 			<p>
-				<input name="txtPassword" type="password" maxlength="16" id="txtPassword" placeholder="请输入密码" />
+				<input name="txtPassword" runat="server" type="password" maxlength="16" id="txtPassword" placeholder="请输入密码" />
 				<span data-val-controltovalidate="txtPassword" data-val-errormessage="密码不能为空" data-val-validationgroup="valid" id="valrPassword" data-val="true" data-val-evaluationfunction="RequiredFieldValidatorEvaluateIsValid" data-val-initialvalue="" style="color:Red;visibility:hidden;">密码不能为空</span>
 				<!--input type="password" placeholder="请输入密码" /-->
 			</p>
-            <p>
-				<input name="txtID1" type="text" maxlength="16" id="Text1" placeholder="请输入用户名" />
-            </p>
-			<p class="login-btn">
-				<%--<input type="submit" name="BtnLogin" value="登录" id="BtnLogin" />--%>
-				<%--<input type="submit" name="BtnReturn" value="返回首页" id="BtnReturn" />--%>
-                <asp:Button runat="server" Text="登录" ID="BtnLogin" OnClick="BtnLogin_Click" OnClientClick="return LogIn()" />
+            <p class="login-btn">
+                <asp:Button runat="server" Text="登录" ID="BtnLogin" OnClientClick="return LogIn()" OnClick="BtnLogin_Click"/>
                 <asp:Button runat="server" Text="返回首页" ID="BtnReturn" UseSubmitBehavior="False" OnClick="BtnReturn_Click" />
 			</p>
+			
 		</form>
+        
 	</div>
 	<canvas class="login-bg" id="bg">
 	</canvas>
 	<script type="text/javascript">
 	    var bg = document.getElementById("bg");
 	    var ctx = bg.getContext("2d");
-		
+
 	    //making the canvas full screen
 	    bg.height = window.innerHeight;
 	    bg.width = window.innerWidth;
-		
+
 	    //chinese characters - taken from the unicode charset
 	    var chinese = "01";
 	    //converting the string into an array of single characters
 	    chinese = chinese.split("");
-		
+
 	    var font_size = 14;
 	    var line_height = 18;
-	    var columns = bg.width/(font_size + line_height); //number of columns for the rain
+	    var columns = bg.width / (font_size + line_height); //number of columns for the rain
 	    //an array of drops - one per column
 	    var drops = [];
 	    //x below is the x coordinate
 	    //1 = y co-ordinate of the drop(same for every drop initially)
-	    for(var x = 0; x < columns; x++) {
-	        drops[x] = 1; 
+	    for (var x = 0; x < columns; x++) {
+	        drops[x] = 1;
 	    }
-		
+
 	    var loop = 0;
 	    //drawing the characters
-	    function draw()
-	    {
+	    function draw() {
 	        loop++;
 	        if (loop > 100) {
 	            //清空背景
@@ -160,30 +154,28 @@
 	            ctx.fillStyle = "rgba(0, 0, 0, .12)";
 	            ctx.fillRect(0, 0, bg.width, bg.height);
 	        }
-			
+
 	        //ctx.fillStyle = "#9ba0a3"; //green text
 	        ctx.fillStyle = "#2ECC71";
 	        ctx.font = font_size + "px arial";
 	        //looping over drops
 	        var dropsL = drops.length
-	        for(var i = 0; i < dropsL; i++)
-	        {
+	        for (var i = 0; i < dropsL; i++) {
 	            //a random chinese character to print
-	            var text = chinese[Math.floor(Math.random()*chinese.length)];
+	            var text = chinese[Math.floor(Math.random() * chinese.length)];
 	            //x = i*font_size, y = value of drops[i]*font_size
-	            ctx.fillText(text, i*(font_size + line_height), drops[i]*(font_size + 4));
-				
+	            ctx.fillText(text, i * (font_size + line_height), drops[i] * (font_size + 4));
+
 	            //sending the drop back to the top randomly after it has crossed the screen
 	            //adding a randomness to the reset to make the drops scattered on the Y axis
-	            if(drops[i]*font_size > bg.height && Math.random() > 0.995) //密集程度，越大越稀疏
+	            if (drops[i] * font_size > bg.height && Math.random() > 0.995) //密集程度，越大越稀疏
 	                drops[i] = 0;
-				
+
 	            //incrementing Y coordinate
 	            drops[i]++;
 	        }
 	    }
 	    setInterval(draw, 40);  //重复绘制，下降速度
 	</script>
-
 </body>
 </html>
