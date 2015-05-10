@@ -11,4 +11,8 @@ public partial class admin_Video : System.Web.UI.Page
     {
         string login = Session["Log"].ToString();
     }
+    protected void Addvideo_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("AddVideo.aspx");
+    }
 }

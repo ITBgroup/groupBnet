@@ -4,15 +4,15 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <%--添加分类--%>
     <div id="add" style="float: none; width: 100%; height: 30px;">
-        <div id="block" clip: rect(auto, auto, auto, auto); style="float: left; width: 20%;">
-            <asp:Label ID="Label2" runat="server" Text="添加分类"></asp:Label>
+        <div id="block" clip: rect(auto, auto, auto, auto); style="float: left; width: 20%; height: 26px;">
+            <asp:Label ID="Label2" runat="server" Text="添加分类" style="font-size: large"></asp:Label>
         </div>
      <div style="float: left; width: 30%;">
-        <asp:Label ID="Label1" runat="server" Text="类名："></asp:Label>
-        <asp:TextBox ID="CName" runat="server" MaxLength="20"></asp:TextBox>
+        <asp:Label ID="Label1" runat="server" Text="类名：" style="font-size: large"></asp:Label>
+        <asp:TextBox ID="CName" runat="server" MaxLength="20" Height="17px"></asp:TextBox>
         </div>
      <div style="float: left; width: 25%;">
-        <asp:DropDownList ID="AClass" runat="server">
+        <asp:DropDownList ID="AClass" runat="server" Height="24px">
             <asp:ListItem Text="请选择一个专题" Value="0" Selected="True"></asp:ListItem>
             <asp:ListItem Text="黑客" Value="1"></asp:ListItem>
             <asp:ListItem Text="极客" Value="2"></asp:ListItem>

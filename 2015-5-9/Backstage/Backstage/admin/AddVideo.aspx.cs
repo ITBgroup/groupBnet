@@ -11,7 +11,7 @@ namespace Backstage.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //string login = Session["Log"].ToString();
+            string login = Session["Log"].ToString();
             if (!Page.IsPostBack)
             {
                 using (var db = new hackerEntities())

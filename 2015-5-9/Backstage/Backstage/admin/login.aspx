@@ -24,11 +24,7 @@
 	    <![endif]-->
 		<h1>黑客与极客网站管理登陆</h1>
 		<form method="post" runat="server" action="login.aspx" onsubmit="javascript:return WebForm_OnSubmit();" id="form1">
-<%--<div class="aspNetHidden">
-<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
-<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/UgwLN+5CmucHxsGsJAeLAKR3JUCB7qdjsIMf80F/Ysi82w/E6mvg9fzXHJbfu8FaRRC/m32eeXB6czVRCdp2Vis6Inql/dmqPLfa8CjZLw=" />
-</div>--%>
+
 
 <script type="text/javascript">
     //<![CDATA[

@@ -11,7 +11,7 @@ namespace Backstage.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         { 
-            //string login = Session["Log"].ToString();
+            string login = Session["Log"].ToString();
             if (!Page.IsPostBack)
             {
                 //绑定数据; 
@@ -47,11 +47,26 @@ namespace Backstage.admin
             {
                 using (var db = new hackerEntities())
                 {
-                    var ac = new VideoClass();
-                    ac.Name = CName.Text;
-                    ac.Class = Convert.ToInt32(AClass.SelectedItem.Value);
-                    db.VideoClass.Add(ac);
+                    var vc = new VideoClass();
+                    vc.Name = CName.Text;
+                    vc.Class = Convert.ToInt32(AClass.SelectedItem.Value);
+                    db.VideoClass.Add(vc);
                     db.SaveChanges();
+                }
+                using (var db = new hackerEntities())
+                {
+                    arclass1.DataSource = (from it in db.VideoClass
+                                           where it.Class == 1
+                                           select it).ToList();
+                    arclass1.DataBind();
+                    arclass2.DataSource = (from it in db.VideoClass
+                                           where it.Class == 2
+                                           select it).ToList();
+                    arclass2.DataBind();
+                    arclass3.DataSource = (from it in db.VideoClass
+                                           where it.Class == 3
+                                           select it).ToList();
+                    arclass3.DataBind();
                 }
                 Response.Write("<script>alert('添加成功');window.location.href='VideoClass.aspx';</script>");
             }
@@ -76,9 +91,24 @@ namespace Backstage.admin
                 }
                 catch { }
                 if (result == 1)
-                    Response.Write("<script>alert('删除成功');window.location.href='VideoClass.aspx';</script>");
+                    ClientScript.RegisterStartupScript(this.GetType(), "", "<script>alert('删除成功');</script>");
                 else
-                    Response.Write("<script>alert('删除失败');window.location.href='VideoClass.aspx';</script>");
+                    ClientScript.RegisterStartupScript(this.GetType(), "", "<script>alert('删除失败');</script>");
+                using (var db = new hackerEntities())
+                {
+                    arclass1.DataSource = (from it in db.VideoClass
+                                           where it.Class == 1
+                                           select it).ToList();
+                    arclass1.DataBind();
+                    arclass2.DataSource = (from it in db.VideoClass
+                                           where it.Class == 2
+                                           select it).ToList();
+                    arclass2.DataBind();
+                    arclass3.DataSource = (from it in db.VideoClass
+                                           where it.Class == 3
+                                           select it).ToList();
+                    arclass3.DataBind();
+                }
             }
         }
     }
